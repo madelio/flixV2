@@ -30,11 +30,16 @@ class MovieDatabase {
                 for movie in moviesDict! {
                     let title = movie["title"] as! String
                     let overview = movie["overview"] as! String
+                    let releaseDate = movie["release_date"] as! String
+                    
+                    let backdropPathStr = movie["backdrop_path"] as! String
                     let posterPathStr = movie["poster_path"] as! String
                     let baseURLString = "https://image.tmdb.org/t/p/w500"
-                    let posterURL = URL(string: baseURLString + posterPathStr)!
                     
-                    let currMovie = Movie(title: title, posterURL:posterURL, overview: overview)
+                    let posterURL = URL(string: baseURLString + posterPathStr)!
+                    let backdropURL = URL(string: baseURLString + backdropPathStr)!
+                    
+                    let currMovie = Movie(title, posterURL, overview, backdropURL, releaseDate)
                     
                     movies.append(currMovie)
                     

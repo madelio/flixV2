@@ -64,7 +64,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         
         cell.titleLabel.text = movies![indexPath.row].title
-        cell.posterImageView.af_setImage(withURL: movies![indexPath.row].posterURL)
+        cell.posterImageView.af_setImage(withURL: movies![indexPath.row].posterURL!)
         cell.overviewLabel.text = movies![indexPath.row].overview
         
         
@@ -72,14 +72,20 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let detailsVC = segue.destination as! MovieDetailsViewController
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        detailsVC.movie = (movies?[indexPath.row])!
+        
     }
-    */
+    
 
 }
