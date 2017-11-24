@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063.1999999999998" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2359" y="70"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="qtj-m1-x8P">
@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnL-L2-n12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3039.1999999999998" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2241" y="903"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="AIB-Km-kpS">
@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Superhero View Controller-->
         <scene sceneID="bMA-MK-9rm">
             <objects>
-                <viewController id="bgI-O9-eUd" sceneMemberID="viewController">
+                <viewController id="bgI-O9-eUd" customClass="SuperheroViewController" customModule="FlixV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mvp-u6-0oX"/>
                         <viewControllerLayoutGuide type="bottom" id="Qs0-hN-pAk"/>
@@ -235,9 +235,46 @@
                     <view key="view" contentMode="scaleToFill" id="3Ej-3t-j9u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DaE-8u-Occ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="H2n-pJ-vnV">
+                                    <size key="itemSize" width="133" height="190"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PosterCell" id="hNR-2H-DkN" customClass="PosterViewCell" customModule="FlixV2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="190"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXY-U3-qhD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="190"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="posterImgView" destination="tXY-U3-qhD" id="Byl-f3-CBI"/>
+                                            <segue destination="lDJ-d5-cJ0" kind="show" identifier="collectionToDetails" id="heX-gM-0XI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="g6n-Ji-oEm"/>
+                    <connections>
+                        <outlet property="collectionView" destination="DaE-8u-Occ" id="4aQ-e5-PF6"/>
+                        <outlet property="collectionViewFlowLayout" destination="H2n-pJ-vnV" id="H4g-WP-Atn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jec-vt-z98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,4 +304,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="heX-gM-0XI"/>
+    </inferredMetricsTieBreakers>
 </document>
