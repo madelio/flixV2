@@ -16,14 +16,14 @@ class MovieDetailsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var backdropImageView: UIImageView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+   // @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     var movie = Movie()
     
     override func viewDidLoad() {
         
-        scrollView.delegate = self
-        scrollView.isScrollEnabled = true
+       // scrollView.delegate = self
+       // scrollView.isScrollEnabled = true
         
         super.viewDidLoad()
         

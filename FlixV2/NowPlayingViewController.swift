@@ -23,6 +23,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
         activityIndicator.startAnimating()
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
