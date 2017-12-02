@@ -130,7 +130,7 @@ limitations under the License.
 
 **FlixV2** is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **0.5** hours spent in total
 
 ## User Stories
 
